@@ -24,16 +24,6 @@ const Projects: React.FC = () => {
     },
     {
       id: 3,
-      title: "DARPA Lift Challenge",
-      description: "Competing in the DARPA LIFT Challenge, we’re designing a next‑generation heavy‑lift VTOL aircraft that combines advanced aerodynamics, electric propulsion, and intelligent flight control for demanding missions.",
-      icon: Cpu,
-      technologies: ["Systems Integration", "Electric Propulsion", "Autonomous VTL", "Mission Planning & Simulation"],
-      status: "Active",
-      image: "/api/placeholder/400/300",
-      link: "https://www.darpa.mil/research/challenges/lift"
-    },
-    {
-      id: 4,
       title: "SUAS Competition",
       description: "Student Unmanned Aerial Systems competition featuring autonomous flight, obstacle avoidance, object detection/classification, and precision air delivery missions.",
       icon: Camera,
@@ -43,7 +33,7 @@ const Projects: React.FC = () => {
       link: "https://suas-competition.org/competitions/"
     },
     {
-      id: 5,
+      id: 4,
       title: "Swarming & Autonomy",
       description: "Advanced formation flying with obstacle avoidance, search-and-rescue grid sweeps, and dynamic perimeter patrol using autonomous drone coordination.",
       icon: Zap,
@@ -52,7 +42,7 @@ const Projects: React.FC = () => {
       image: "/api/placeholder/400/300"
     },
     {
-      id: 6,
+      id: 5,
       title: "Networking & Resilience",
       description: "Mesh relay chains, redundant control systems, and adaptive communication routing for robust drone fleet operations in challenging environments.",
       icon: Wifi,
