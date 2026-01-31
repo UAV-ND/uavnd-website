@@ -105,8 +105,8 @@ const Contact: React.FC = () => {
     {
       icon: Clock,
       title: "Meeting Times",
-      details: "Wednesdays & Fridays 7:30-10:00 PM",
-      description: "Weekly club meetings"
+      details: "Mon, Wed, Fri - 6:00-9:00 PM",
+      description: "Drop in anytime during these hours"
     },
   ];
 
