@@ -28,7 +28,7 @@ const Projects: React.FC = () => {
       description: "Student Unmanned Aerial Systems competition featuring autonomous flight, obstacle avoidance, object detection/classification, and precision air delivery missions.",
       icon: Camera,
       technologies: ["Autonomous Flight", "Obstacle Avoidance", "Computer Vision", "GPS Navigation"],
-      status: "Active",
+      status: "Development",
       image: "/api/placeholder/400/300",
       link: "https://suas-competition.org/competitions/"
     },

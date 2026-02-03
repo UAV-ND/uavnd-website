@@ -241,7 +241,7 @@ const Team: React.FC = () => {
 								<Calendar className="w-8 h-8 text-nd-gold" />
 							</div>
 							<h4 className="text-lg font-semibold text-white mb-2">Weekly Meetings</h4>
-							<p className="text-gray-300 text-sm">Wednesdays & Fridays 7:30-10:00 PM</p>
+							<p className="text-gray-300 text-sm">Mon, Wed, Fri - 6:00-9:00 PM</p>
 						</div>
 						<div className="text-center">
 							<div className="w-16 h-16 bg-nd-gold/20 rounded-full flex items-center justify-center mx-auto mb-4">
