@@ -12,34 +12,54 @@ const Contact: React.FC = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [videoError, setVideoError] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const video = videoRef.current;
-    if (video) {
-      // Try to play the video
-      const playPromise = video.play();
-      
-      if (playPromise !== undefined) {
-        playPromise.catch(() => {
-          // Autoplay failed, which is common on mobile
-          console.log('Contact video autoplay failed, will play on user interaction');
-          
-          // Add click/touch listeners to play video on user interaction
-          const playOnInteraction = () => {
-            video.play().catch(console.log);
-            document.removeEventListener('click', playOnInteraction);
-            document.removeEventListener('touchstart', playOnInteraction);
-            document.removeEventListener('scroll', playOnInteraction);
-          };
-          
-          document.addEventListener('click', playOnInteraction);
-          document.addEventListener('touchstart', playOnInteraction);
-          document.addEventListener('scroll', playOnInteraction);
-        });
-      }
+    if (video && !videoError) {
+      // Check if video source is loaded
+      const handleCanPlay = () => {
+        // Try to play the video once it can play
+        const playPromise = video.play();
+        
+        if (playPromise !== undefined) {
+          playPromise.catch(() => {
+            // Autoplay failed, which is common on mobile
+            // Silently handle - don't log to console
+            // Add click/touch listeners to play video on user interaction
+            const playOnInteraction = () => {
+              video.play().catch(() => {});
+              document.removeEventListener('click', playOnInteraction);
+              document.removeEventListener('touchstart', playOnInteraction);
+              document.removeEventListener('scroll', playOnInteraction);
+            };
+            
+            document.addEventListener('click', playOnInteraction);
+            document.addEventListener('touchstart', playOnInteraction);
+            document.addEventListener('scroll', playOnInteraction);
+          });
+        }
+      };
+
+      const handleError = () => {
+        // Video failed to load - hide it gracefully
+        setVideoError(true);
+        video.style.display = 'none';
+      };
+
+      video.addEventListener('canplay', handleCanPlay);
+      video.addEventListener('error', handleError);
+
+      // Load the video
+      video.load();
+
+      return () => {
+        video.removeEventListener('canplay', handleCanPlay);
+        video.removeEventListener('error', handleError);
+      };
     }
-  }, []);
+  }, [videoError]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -115,17 +135,19 @@ const Contact: React.FC = () => {
     <section id="contact" className="section-padding bg-dark-bg relative overflow-hidden">
       {/* Background video */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <video
-          ref={videoRef}
-          className="w-full h-full object-cover opacity-25"
-          src={contactVideo}
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          webkit-playsinline="true"
-        />
+        {!videoError && (
+          <video
+            ref={videoRef}
+            className="w-full h-full object-cover opacity-25"
+            src={contactVideo}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            onError={() => setVideoError(true)}
+          />
+        )}
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/80" />
       </div>
       <div className="relative z-10 max-w-7xl mx-auto">
