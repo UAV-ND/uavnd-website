@@ -1,5 +1,5 @@
 import React from 'react';
-import { GraduationCap, Building2, Rocket, Users, Award, TrendingUp, MapPin, Briefcase } from 'lucide-react';
+import { GraduationCap } from 'lucide-react';
 import boeingLogo from '../img/boeing.jpg';
 import lockheedLogo from '../img/lm.png';
 import andurilLogo from '../img/Anduril_Logo_UAS_53b9c9ea1c.jpg';

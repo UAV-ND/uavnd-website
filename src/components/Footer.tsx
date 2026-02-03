@@ -121,15 +121,27 @@ const Footer: React.FC = () => {
               © {currentYear} UAV ND - University of Notre Dame. All rights reserved.
             </div>
             <div className="flex space-x-6 text-sm">
-              <a href="#" className="text-gray-400 hover:text-nd-gold transition-colors">
+              <button
+                type="button"
+                className="text-gray-400 hover:text-nd-gold transition-colors"
+                onClick={() => alert("Coming soon")}
+              >
                 Privacy Policy
-              </a>
-              <a href="#" className="text-gray-400 hover:text-nd-gold transition-colors">
+              </button>
+              <button
+                type="button"
+                className="text-gray-400 hover:text-nd-gold transition-colors"
+                onClick={() => alert("Coming soon")}
+              >
                 Terms of Service
-              </a>
-              <a href="#" className="text-gray-400 hover:text-nd-gold transition-colors">
+              </button>
+              <button
+                type="button"
+                className="text-gray-400 hover:text-nd-gold transition-colors"
+                onClick={() => alert("Coming soon")}
+              >
                 Code of Conduct
-              </a>
+              </button>
             </div>
           </div>
         </div>
