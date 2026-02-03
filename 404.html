@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>404</title>
+    <meta http-equiv="refresh" content="0; url=./" />
+  </head>
+  <body>
+    <p>Redirecting...</p>
+    <script>
+      // Client-side redirect for SPA routes
+      (function() {
+        var redirect = sessionStorage.getItem('gh_redirect');
+        if (redirect) {
+          sessionStorage.removeItem('gh_redirect');
+          window.location.replace(redirect);
+        }
+      })();
+    </script>
+  </body>
+  </html>
+
+

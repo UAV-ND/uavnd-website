@@ -1,0 +1,8 @@
+*.mkv filter=lfs diff=lfs merge=lfs -text
+*.mp4 filter=lfs diff=lfs merge=lfs -text
+*.mov filter=lfs diff=lfs merge=lfs -text
+*.avi filter=lfs diff=lfs merge=lfs -text
+*.MP4 filter=lfs diff=lfs merge=lfs -text
+src/videos/chase[[:space:]]-[[:space:]]Made[[:space:]]with[[:space:]]Clipchamp[[:space:]](1).mp4 filter=lfs diff=lfs merge=lfs -text
+src/videos/LinkedIn.mp4 filter=lfs diff=lfs merge=lfs -text
+src/videos/DJI_0009.MP4 filter=lfs diff=lfs merge=lfs -text

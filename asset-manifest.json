@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/static/css/main.b50fdd7f.css",
+    "main.js": "/static/js/main.95e7db57.js",
+    "static/js/453.0a8513ca.chunk.js": "/static/js/453.0a8513ca.chunk.js",
+    "static/media/DSC00175.JPG": "/static/media/DSC00175.3c628b4489a2abcab684.JPG",
+    "static/media/uavnd_tp__submission.pdf": "/static/media/uavnd_tp__submission.5e3f1b40d6d90d50f761.pdf",
+    "static/media/minjae.png": "/static/media/minjae.5742546cbb7bbf83bf25.png",
+    "static/media/uavnd_flyer_final_2.0.pdf": "/static/media/uavnd_flyer_final_2.0.8f1bbd48c908665375c4.pdf",
+    "static/media/fabian.png": "/static/media/fabian.6904a384e44beff9c211.png",
+    "static/media/jake.jpg": "/static/media/jake.b171db3ada0c714bbfd4.jpg",
+    "static/media/uavnd_charter.pdf": "/static/media/uavnd_charter.543ef045ecead23909a8.pdf",
+    "static/media/uavnd_safety_handbook.pdf": "/static/media/uavnd_safety_handbook.969ec258c59f683e0fef.pdf",
+    "static/media/procter-Gamble-0٣-scaled.jpg": "/static/media/procter-Gamble-0٣-scaled.c3893189396e017662f9.jpg",
+    "static/media/club_constitution__summer_sao_submission_.pdf": "/static/media/club_constitution__summer_sao_submission_.865834e9bc0f11f66f89.pdf",
+    "static/media/logo.png": "/static/media/logo.4747024930f850c56ae7.png",
+    "static/media/chris.jpg": "/static/media/chris.0c36c8ea0d65ea6f4504.jpg",
+    "static/media/enoch.jpeg": "/static/media/enoch.f51d2c3e87cedbd2bb0b.jpeg",
+    "static/media/Anduril_Logo_UAS_53b9c9ea1c.jpg": "/static/media/Anduril_Logo_UAS_53b9c9ea1c.36fc620cb835eb369817.jpg",
+    "static/media/jg.jpeg": "/static/media/jg.d0c3d40269fb98d61744.jpeg",
+    "static/media/winston.jpeg": "/static/media/winston.cde67985d2cb1d68eb45.jpeg",
+    "static/media/boeing.jpg": "/static/media/boeing.06c2374a544644fd2d0c.jpg",
+    "index.html": "/index.html",
+    "static/media/DJI_0009.MP4": "/static/media/DJI_0009.9bf383382e99ab8bbd1c.MP4",
+    "static/media/chase.mp4": "/static/media/chase.ac751c0a5becd689899c.mp4",
+    "main.b50fdd7f.css.map": "/static/css/main.b50fdd7f.css.map",
+    "main.95e7db57.js.map": "/static/js/main.95e7db57.js.map",
+    "453.0a8513ca.chunk.js.map": "/static/js/453.0a8513ca.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b50fdd7f.css",
+    "static/js/main.95e7db57.js"
+  ]
+}
