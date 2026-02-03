@@ -18,23 +18,18 @@ const Contact: React.FC = () => {
   useEffect(() => {
     const video = videoRef.current;
     if (video && !videoError) {
-      // Check if video source is loaded
-      const handleCanPlay = () => {
-        // Try to play the video once it can play
+      // Try to play immediately - video will start when ready
+      const tryPlay = () => {
         const playPromise = video.play();
-        
         if (playPromise !== undefined) {
           playPromise.catch(() => {
-            // Autoplay failed, which is common on mobile
-            // Silently handle - don't log to console
-            // Add click/touch listeners to play video on user interaction
+            // Autoplay failed - add interaction listeners
             const playOnInteraction = () => {
               video.play().catch(() => {});
               document.removeEventListener('click', playOnInteraction);
               document.removeEventListener('touchstart', playOnInteraction);
               document.removeEventListener('scroll', playOnInteraction);
             };
-            
             document.addEventListener('click', playOnInteraction);
             document.addEventListener('touchstart', playOnInteraction);
             document.addEventListener('scroll', playOnInteraction);
@@ -42,20 +37,33 @@ const Contact: React.FC = () => {
         }
       };
 
+      // Play as soon as enough data is loaded to play through
+      const handleCanPlayThrough = () => {
+        tryPlay();
+      };
+
+      // Also try to play when just enough data is loaded (faster)
+      const handleCanPlay = () => {
+        tryPlay();
+      };
+
       const handleError = () => {
-        // Video failed to load - hide it gracefully
         setVideoError(true);
         video.style.display = 'none';
       };
 
-      video.addEventListener('canplay', handleCanPlay);
-      video.addEventListener('error', handleError);
+      // Try to play immediately if video is already ready
+      if (video.readyState >= 3) { // HAVE_FUTURE_DATA
+        tryPlay();
+      }
 
-      // Load the video
-      video.load();
+      video.addEventListener('canplay', handleCanPlay);
+      video.addEventListener('canplaythrough', handleCanPlayThrough);
+      video.addEventListener('error', handleError);
 
       return () => {
         video.removeEventListener('canplay', handleCanPlay);
+        video.removeEventListener('canplaythrough', handleCanPlayThrough);
         video.removeEventListener('error', handleError);
       };
     }
@@ -144,7 +152,7 @@ const Contact: React.FC = () => {
             muted
             loop
             playsInline
-            preload="metadata"
+            preload="auto"
             onError={() => setVideoError(true)}
           />
         )}
