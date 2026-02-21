@@ -24,13 +24,13 @@ const Projects: React.FC = () => {
     },
     {
       id: 3,
-      title: "SUAS Competition",
-      description: "Student Unmanned Aerial Systems competition featuring autonomous flight, obstacle avoidance, object detection/classification, and precision air delivery missions.",
-      icon: Camera,
-      technologies: ["Autonomous Flight", "Obstacle Avoidance", "Computer Vision", "GPS Navigation"],
+      title: "AI Grand Prix Competition",
+      description: "Autonomous racing platform for the AI Grand Prix, featuring onboard perception, planning, and control for safe high-speed racing on complex tracks.",
+      icon: Cpu,
+      technologies: ["Python", "Computer Vision", "Reinforcement Learning", "Path Planning"],
       status: "Development",
       image: "/api/placeholder/400/300",
-      link: "https://suas-competition.org/competitions/"
+      link: "https://theaigrandprix.com/"
     },
     {
       id: 4,
