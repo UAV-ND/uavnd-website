@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Drone, Cpu, Camera, Wifi, Shield, Zap } from 'lucide-react';
+import { ArrowRight, Drone, Camera, Wifi, Shield, Zap } from 'lucide-react';
 
 const Projects: React.FC = () => {
   const projects = [

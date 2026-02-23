@@ -1,5 +1,5 @@
 import React from 'react';
-import { Users, Mail, Linkedin, Github, Award, Calendar } from 'lucide-react';
+import { Users, Mail, Linkedin, Award, Calendar } from 'lucide-react';
 import fabianImage from '../img/fabian.png';
 import jgImage from '../img/jg.jpeg';
 import winstonImage from '../img/winston.jpeg';
