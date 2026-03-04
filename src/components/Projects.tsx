@@ -15,22 +15,22 @@ const Projects: React.FC = () => {
     },
     {
       id: 2,
+      title: "AI Grand Prix",
+      description: "Global autonomous drone racing competition founded by Anduril, challenging engineers to develop AI systems that pilot high-speed racing drones through dynamic courses with zero human control. Competing for a $500K prize pool.",
+      icon: Zap,
+      technologies: ["Autonomous Flight", "AI/ML", "Computer Vision", "Python", "Obstacle Avoidance"],
+      status: "Active",
+      image: "/api/placeholder/400/300",
+      link: "https://www.theaigrandprix.com/"
+    },
+    {
+      id: 3,
       title: "Drone Evader vs. Pursuer",
       description: "Advanced drone interception system where one drone evades while another pursues using sophisticated prediction algorithms and real-time tracking.",
       icon: Shield,
       technologies: ["Prediction Algorithms", "Real-time Tracking", "Intercept Systems", "Evasion Tactics"],
       status: "Active",
       image: "/api/placeholder/400/300"
-    },
-    {
-      id: 3,
-      title: "SUAS Competition",
-      description: "Student Unmanned Aerial Systems competition featuring autonomous flight, obstacle avoidance, object detection/classification, and precision air delivery missions.",
-      icon: Camera,
-      technologies: ["Autonomous Flight", "Obstacle Avoidance", "Computer Vision", "GPS Navigation"],
-      status: "Development",
-      image: "/api/placeholder/400/300",
-      link: "https://suas-competition.org/competitions/"
     },
     {
       id: 4,
