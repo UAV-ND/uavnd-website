@@ -11,19 +11,8 @@ import jakeImage from '../img/jake.jpg';
 const Team: React.FC = () => {
 	const leadership = [
 		{
-			name: "Fabian Ortega",
-			role: "President/Treasurer",
-			major: "Mechanical Engineering",
-			year: "Junior",
-			location: "Sarasota, FL",
-			image: fabianImage,
-			bio: "Leading UAV ND with a passion for mechanical systems and financial management, driving our club's mission forward.",
-			linkedin: "https://www.linkedin.com/in/fabian-ortega05/",
-			email: "fortega2@nd.edu"
-		},
-		{
 			name: "Minjae Kim",
-			role: "Vice-President",
+			role: "President",
 			major: "Electrical Engineering",
 			year: "Junior",
 			location: "Tamuning, GU",
@@ -44,6 +33,17 @@ const Team: React.FC = () => {
 			email: "jgrandaa@nd.edu"
 		}, 
 		{
+			name: "Fabian Ortega",
+			role: "Treasurer",
+			major: "Mechanical Engineering",
+			year: "Junior",
+			location: "Sarasota, FL",
+			image: fabianImage,
+			bio: "Leading UAV ND with a passion for financial management.",
+			linkedin: "https://www.linkedin.com/in/fabian-ortega05/",
+			email: "fortega2@nd.edu"
+		},
+		{
 			name: "Winston Tumbelaka",
 			role: "Chief Safety Officer",
 			major: "Electrical Engineering",
@@ -57,17 +57,6 @@ const Team: React.FC = () => {
 	];
 	// Additional leaders
 	leadership.push(
-		{
-			name: "Christopher Qian",
-			role: "Corporate Relations Officer",
-			major: "Aerospace Engineering",
-			year: "Sophomore",
-			location: "Ashburn, VA",
-			image: chrisImage,
-			bio: "Strengthening our corporate partnerships and fostering new sponsorship opportunities.",
-			linkedin: "https://www.linkedin.com/in/christopher-w-qian/",
-			email: "cqian3@nd.edu"
-		},
 		{
 			name: "Enoch Hyo-Gun Lee",
 			role: "Communications Officer",

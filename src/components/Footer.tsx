@@ -39,7 +39,7 @@ const Footer: React.FC = () => {
               <img 
                 src={logoImage} 
                 alt="UAV ND Logo" 
-                className="w-8 h-8 object-contain"
+                className="w-16 h-16 object-contain"
               />
               <span className="text-xl font-display font-bold text-white">UAV ND</span>
             </div>

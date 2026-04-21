@@ -36,14 +36,14 @@ const Header: React.FC = () => {
       isScrolled ? 'bg-dark-bg/95 backdrop-blur-md border-b border-dark-border' : 'bg-transparent'
     }`}>
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
             <a href="#home" className="flex items-center space-x-2">
               <img 
                 src={logoImage} 
                 alt="UAV ND Logo" 
-                className="w-10 h-10 object-contain"
+                className="w-16 h-16 object-contain"
               />
               <span className="text-xl font-display font-bold text-white">UAV ND</span>
             </a>
