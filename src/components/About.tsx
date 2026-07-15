@@ -31,6 +31,11 @@ const About: React.FC = () => {
       year: "2025",
       title: "AI Integration",
       description: "Integrated machine learning into our flight control systems"
+    },
+    {
+      year: "2026",
+      title: "Best Mission Completion Time Award at 2026 AIMM ICC Competition",
+      description: "Won the fastest mission completion time award at the 2026 AIMM ICC Competition"
     }
   ];
 

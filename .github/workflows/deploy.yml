@@ -23,6 +23,20 @@ jobs:
         with:
           lfs: true
 
+      - name: Fetch Git LFS media
+        run: |
+          git lfs install
+          git lfs pull
+          echo "Video file sizes:"
+          ls -lh public/videos/ src/videos/ 2>/dev/null || true
+          for f in public/videos/* src/videos/*; do
+            [ -f "$f" ] || continue
+            if head -1 "$f" | grep -q "git-lfs"; then
+              echo "ERROR: $f is a Git LFS pointer, not actual media. Run 'git lfs push --all origin' locally."
+              exit 1
+            fi
+          done
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:

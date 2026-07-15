@@ -1,63 +1,14 @@
-import React, { useEffect, useRef, useState } from 'react';
-import heroVideo from '../videos/DJI_0009.MP4';
+import React, { useRef, useState } from 'react';
+import { useBackgroundVideo } from '../hooks/useBackgroundVideo';
+import { getPublicVideo } from '../utils/media';
+
+const HERO_VIDEO = getPublicVideo('DJI_0009.MP4');
 
 const Hero: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [videoError, setVideoError] = useState(false);
 
-  useEffect(() => {
-    const video = videoRef.current;
-    if (video && !videoError) {
-      // Try to play immediately - video will start when ready
-      const tryPlay = () => {
-        const playPromise = video.play();
-        if (playPromise !== undefined) {
-          playPromise.catch(() => {
-            // Autoplay failed - add interaction listeners
-            const playOnInteraction = () => {
-              video.play().catch(() => {});
-              document.removeEventListener('click', playOnInteraction);
-              document.removeEventListener('touchstart', playOnInteraction);
-              document.removeEventListener('scroll', playOnInteraction);
-            };
-            document.addEventListener('click', playOnInteraction);
-            document.addEventListener('touchstart', playOnInteraction);
-            document.addEventListener('scroll', playOnInteraction);
-          });
-        }
-      };
-
-      // Play as soon as enough data is loaded to play through
-      const handleCanPlayThrough = () => {
-        tryPlay();
-      };
-
-      // Also try to play when just enough data is loaded (faster)
-      const handleCanPlay = () => {
-        tryPlay();
-      };
-
-      const handleError = () => {
-        setVideoError(true);
-        video.style.display = 'none';
-      };
-
-      // Try to play immediately if video is already ready
-      if (video.readyState >= 3) { // HAVE_FUTURE_DATA
-        tryPlay();
-      }
-
-      video.addEventListener('canplay', handleCanPlay);
-      video.addEventListener('canplaythrough', handleCanPlayThrough);
-      video.addEventListener('error', handleError);
-
-      return () => {
-        video.removeEventListener('canplay', handleCanPlay);
-        video.removeEventListener('canplaythrough', handleCanPlayThrough);
-        video.removeEventListener('error', handleError);
-      };
-    }
-  }, [videoError]);
+  useBackgroundVideo(videoRef);
 
   return (
     <section id="home" className="relative overflow-hidden bg-dark-bg min-h-[70vh]">
@@ -67,16 +18,14 @@ const Hero: React.FC = () => {
           <video
             ref={videoRef}
             className="w-full h-full object-cover opacity-50"
-            src={heroVideo}
+            src={HERO_VIDEO}
             autoPlay
             muted
             loop
             playsInline
             preload="auto"
             onError={() => setVideoError(true)}
-          >
-            {/* Fallback for older browsers */}
-          </video>
+          />
         )}
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80" />
       </div>
@@ -103,4 +52,3 @@ const Hero: React.FC = () => {
 };
 
 export default Hero;
-

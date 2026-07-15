@@ -1,7 +1,10 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { Mail, MapPin, Clock, Send, CheckCircle, AlertCircle } from 'lucide-react';
 import emailjs from '@emailjs/browser';
-import contactVideo from "../videos/chase.mp4";
+import { useBackgroundVideo } from '../hooks/useBackgroundVideo';
+import { getPublicVideo } from '../utils/media';
+
+const CONTACT_VIDEO = getPublicVideo('chase.mp4');
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -15,59 +18,7 @@ const Contact: React.FC = () => {
   const [videoError, setVideoError] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  useEffect(() => {
-    const video = videoRef.current;
-    if (video && !videoError) {
-      // Try to play immediately - video will start when ready
-      const tryPlay = () => {
-        const playPromise = video.play();
-        if (playPromise !== undefined) {
-          playPromise.catch(() => {
-            // Autoplay failed - add interaction listeners
-            const playOnInteraction = () => {
-              video.play().catch(() => {});
-              document.removeEventListener('click', playOnInteraction);
-              document.removeEventListener('touchstart', playOnInteraction);
-              document.removeEventListener('scroll', playOnInteraction);
-            };
-            document.addEventListener('click', playOnInteraction);
-            document.addEventListener('touchstart', playOnInteraction);
-            document.addEventListener('scroll', playOnInteraction);
-          });
-        }
-      };
-
-      // Play as soon as enough data is loaded to play through
-      const handleCanPlayThrough = () => {
-        tryPlay();
-      };
-
-      // Also try to play when just enough data is loaded (faster)
-      const handleCanPlay = () => {
-        tryPlay();
-      };
-
-      const handleError = () => {
-        setVideoError(true);
-        video.style.display = 'none';
-      };
-
-      // Try to play immediately if video is already ready
-      if (video.readyState >= 3) { // HAVE_FUTURE_DATA
-        tryPlay();
-      }
-
-      video.addEventListener('canplay', handleCanPlay);
-      video.addEventListener('canplaythrough', handleCanPlayThrough);
-      video.addEventListener('error', handleError);
-
-      return () => {
-        video.removeEventListener('canplay', handleCanPlay);
-        video.removeEventListener('canplaythrough', handleCanPlayThrough);
-        video.removeEventListener('error', handleError);
-      };
-    }
-  }, [videoError]);
+  useBackgroundVideo(videoRef, { playWhenVisible: true });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -127,7 +78,7 @@ const Contact: React.FC = () => {
     {
       icon: MapPin,
       title: "Location",
-      details: "Stinson-Remick Hall of Engineering - 216",
+      details: "Fitzpatrick Hall of Engineering - A54",
       description: "University of Notre Dame"
     },
     {
@@ -147,7 +98,7 @@ const Contact: React.FC = () => {
           <video
             ref={videoRef}
             className="w-full h-full object-cover opacity-25"
-            src={contactVideo}
+            src={CONTACT_VIDEO}
             autoPlay
             muted
             loop

@@ -5,16 +5,6 @@ const Projects: React.FC = () => {
   const projects = [
     {
       id: 1,
-      title: "AIMM ICC Competition",
-      description: "Artificial Intelligence Maritime Maneuver Indiana Collegiate Challenge - developing innovative drone solutions for maritime scenarios including drone-vs-drone intercept with prediction algorithms.",
-      icon: Drone,
-      technologies: ["Python", "Computer Vision", "AI/ML", "Prediction Algorithms"],
-      status: "Active",
-      image: "/api/placeholder/400/300",
-      link: "https://www.trine.edu/innovation-one/aimm/index.aspx"
-    },
-    {
-      id: 2,
       title: "AI Grand Prix",
       description: "Global autonomous drone racing competition founded by Anduril, challenging engineers to develop AI systems that pilot high-speed racing drones through dynamic courses with zero human control. Competing for a $500K prize pool.",
       icon: Zap,
@@ -24,32 +14,53 @@ const Projects: React.FC = () => {
       link: "https://www.theaigrandprix.com/"
     },
     {
-      id: 3,
+      id: 2,
       title: "Drone Evader vs. Pursuer",
       description: "Advanced drone interception system where one drone evades while another pursues using sophisticated prediction algorithms and real-time tracking.",
       icon: Shield,
       technologies: ["Prediction Algorithms", "Real-time Tracking", "Intercept Systems", "Evasion Tactics"],
-      status: "Active",
+      status: "Research",
       image: "/api/placeholder/400/300"
     },
     {
-      id: 4,
+      id: 3,
       title: "Swarming & Autonomy",
       description: "Advanced formation flying with obstacle avoidance, search-and-rescue grid sweeps, and dynamic perimeter patrol using autonomous drone coordination.",
       icon: Zap,
       technologies: ["Formation Flying", "Obstacle Avoidance", "Autonomous Navigation", "Grid Search"],
-      status: "Development",
+      status: "Research",
       image: "/api/placeholder/400/300"
     },
     {
-      id: 5,
+      id: 4,
       title: "Networking & Resilience",
       description: "Mesh relay chains, redundant control systems, and adaptive communication routing for robust drone fleet operations in challenging environments.",
       icon: Wifi,
       technologies: ["Mesh Networking", "Redundant Control", "Adaptive Routing", "Fleet Management"],
-      status: "Development",
+      status: "Research",
       image: "/api/placeholder/400/300"
-    }
+    }, 
+    {
+      id: 5,
+      title: "2027 RTX Autonomous Vehicle Competition",
+      description: "Annual regional Raytheon-sponsored event where STEM students tackle timed autonomous vehicle challenges in friendly competition with other universities.",
+
+      icon: Drone,
+      technologies: ["Autonomous Vehicle", "Computer Vision", "AI/ML", "Prediction Algorithms"],
+      status: "Comming Soon",
+      image: "/api/placeholder/400/300",
+      link: "https://www.youtube.com/watch?v=TaiLjWskhFQ&t=7s"
+    },
+    {
+      id: 6,
+      title: "2027 AIMM ICC Competition",
+      description: "Artificial Intelligence Maritime Maneuver Indiana Collegiate Challenge - developing innovative drone solutions for maritime scenarios including drone-vs-drone intercept with prediction algorithms.",
+      icon: Drone,
+      technologies: ["Python", "Computer Vision", "AI/ML", "Prediction Algorithms"],
+      status: "Comming Soon",
+      image: "/api/placeholder/400/300",
+      link: "https://www.trine.edu/innovation-one/aimm/index.aspx"
+    },
   ];
 
   const getStatusColor = (status: string) => {
@@ -60,6 +71,8 @@ const Projects: React.FC = () => {
         return 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30';
       case 'Research':
         return 'bg-blue-500/20 text-blue-400 border-blue-500/30';
+      case 'Comming Soon':
+        return 'bg-gray-500/20 text-gray-400 border-gray-500/30';
       default:
         return 'bg-gray-500/20 text-gray-400 border-gray-500/30';
     }

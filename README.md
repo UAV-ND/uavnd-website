@@ -102,7 +102,9 @@ Update the content in each component file:
 ### Media Assets
 
 - Place images in `src/img/` and import them directly in components.
-- Place videos in `src/videos/` and import `.mp4` files directly; TypeScript module declarations are included in `src/types/media.d.ts`.
+- Place videos in `public/videos/` and reference them with `getPublicVideo()` from `src/utils/media.ts`.
+- Videos are tracked with Git LFS. After cloning, run `git lfs pull` so local files are real media, not pointer stubs.
+- Before deploying, ensure LFS objects are on GitHub: `git lfs push --all origin`.
 - Large videos may impact performance; consider compressing or trimming for production.
 
 ### SVG Notes

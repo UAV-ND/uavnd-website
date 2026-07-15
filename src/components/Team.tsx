@@ -1,83 +1,82 @@
 import React from 'react';
 import { Users, Mail, Linkedin, Award, Calendar } from 'lucide-react';
-import fabianImage from '../img/fabian.png';
 import jgImage from '../img/jg.jpeg';
 import winstonImage from '../img/winston.jpeg';
 import minjaeImage from '../img/minjae.png';
 import enochImage from '../img/enoch.jpeg';
-import chrisImage from '../img/chris.jpg';
-import jakeImage from '../img/jake.jpg';
+import jessicaImage from '../img/jessica_headshot.jpg';
+import batyrkhanImage from '../img/bat_headshot.png';
 
 const Team: React.FC = () => {
 	const leadership = [
 		{
-			name: "Minjae Kim",
-			role: "President",
+			name: "Winston Tumbelaka",
+			role: "Project Manager",
 			major: "Electrical Engineering",
 			year: "Junior",
+			location: "Jakarta, Indonesia",
+			image: winstonImage,
+			bio: "Leading and managing the overall project and overseeing the progress of the team.",
+			linkedin: "https://www.linkedin.com/in/winston-tumbelaka/",
+			email: "wtumbel2@nd.edu"
+		},
+		{
+			name: "Minjae Kim",
+			role: "Director of Research and Development",
+			major: "Electrical Engineering",
+			year: "Senior",
 			location: "Tamuning, GU",
 			image: minjaeImage,
-			bio: "Leading the electrical systems team and supporting our technical projects and club operations.",
+			bio: "Leading the research and development of the team and overseeing the technical projects.",
 			linkedin: "https://www.linkedin.com/in/mjkim05/",
 			email: "mkim26@nd.edu"
 		},
 		{
 			name: "Jonathan Granda",
-			role: "Vice-President",
+			role: "Chief Technical Engineer",
 			major: "Computer Science & Spanish, Portuguese & Brazilian Studies",
 			year: "Senior",
 			location: "Morristown, NJ",
 			image: jgImage,
-			bio: "Leading the software systems team and providing technical guidance and expertise in software development and international collaboration.",
+			bio: "Providing technical guidance and expertise in software development and hardware design for the team.",
 			linkedin: "https://www.linkedin.com/in/jonathan-granda-acaro/",
 			email: "jgrandaa@nd.edu"
-		}, 
-		{
-			name: "Fabian Ortega",
-			role: "Treasurer",
-			major: "Mechanical Engineering",
-			year: "Junior",
-			location: "Sarasota, FL",
-			image: fabianImage,
-			bio: "Leading UAV ND with a passion for financial management.",
-			linkedin: "https://www.linkedin.com/in/fabian-ortega05/",
-			email: "fortega2@nd.edu"
-		},
-		{
-			name: "Winston Tumbelaka",
-			role: "Chief Safety Officer",
-			major: "Electrical Engineering",
-			year: "Sophomore",
-			location: "Jakarta, Indonesia",
-			image: winstonImage,
-			bio: "Ensuring the safety of all our operations while contributing to electrical engineering projects.",
-			linkedin: "https://www.linkedin.com/in/winston-tumbelaka/",
-			email: "wtumbel2@nd.edu"
 		}
 	];
 	// Additional leaders
 	leadership.push(
 		{
 			name: "Enoch Hyo-Gun Lee",
-			role: "Communications Officer",
+			role: "Director of Growth and Expansion",
 			major: "Electrical Engineering",
-			year: "Sophomore",
+			year: "Junior",
 			location: "Gyeonggi-do, South Korea",
 			image: enochImage,
-			bio: "Managing team projects and coordinating club communications and outreach across campus and online platforms.",
+			bio: "Leading the growth and expansion of the team and coordinating the club communications and outreach across campus and online platforms.",
 			linkedin: "https://www.linkedin.com/in/enoch-hyo-gun-lee/",
 			email: "elee26@nd.edu"
 		},
 		{
-			name: "Jake Kalman",
+			name: "Batyrkhan Alimzhanov",
+			role: "Aerodynamics & Structures Lead",
+			major: "Aerospace Engineering & Applied Mathematics",
+			year: "Sophomore",
+			location: "Staten Island, NY",
+			image: batyrkhanImage,
+			bio: "Leading the corporate relations and funding for the team and ensuring the financial stability of the club.",
+			linkedin: "https://www.linkedin.com/in/batyrkhana/",
+			email: "balimzha@nd.edu"
+		}, 
+		{
+			name: "Jessica Haro-Luna",
 			role: "Social Media Officer",
-			major: "Industrial Design",
-			year: "Senior",
-			location: "Charlotte, NC",
-			image: jakeImage,
-			bio: "Showcasing our projects and team culture through engaging social media content.",
-			linkedin: "https://www.linkedin.com/in/jakekalman0073/",
-			email: "jkalman@nd.edu"
+			major: "Mechanical Engineering and Japanese Studies",
+			year: "Junior",
+			location: "South Bend, IN",
+			image: jessicaImage,
+			bio: "Leading the social media presence of the team and showcasing our projects and team culture through engaging social media content.",
+			linkedin: "https://www.linkedin.com/in/jessica-haro-",
+			email: "jharo@nd.edu"
 		}
 	);
 
