@@ -108,7 +108,7 @@ const Footer: React.FC = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="w-4 h-4 text-nd-gold" />
-                <span className="text-gray-400">Stinson-Remick Hall of Engineering - 216</span>
+                <span className="text-gray-400">Stinson-Remick Hall of Engineering - B19</span>
               </div>
             </div>
           </div>
