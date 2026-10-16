@@ -77,20 +77,20 @@ const Contact: React.FC = () => {
     },
     {
       icon: MapPin,
-      title: "Location",
+      title: "Lab Location",
       details: "Fitzpatrick Hall of Engineering - A54",
       description: "University of Notre Dame"
     },
     {
       icon: Clock,
-      title: "Meeting Times",
+      title: "Meeting Times @ Fitzpatrick Hall of Engineering - B19",
       details:[
       "Mon: Software Subteam • 5:30-7:30 PM",
       "Mon: Electrical Subteam • 6:30-8:30 PM",
       "Tue: Vehicles Subteam • 6:30-8:30 PM",
       "Wed: General Meeting • 7:00-9:00 PM",
       ],
-      description: "Drop in anytime during these hours"
+      description: "Drop in anytime during these hour!"
     },
   ];
 
