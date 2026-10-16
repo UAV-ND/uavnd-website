@@ -23,10 +23,10 @@ const Footer: React.FC = () => {
   ];
 
   const projectLinks = [
-    { name: 'Autonomous Fleet', href: '#project-1' },
-    { name: 'FPV Racing', href: '#project-2' },
-    { name: 'Search & Rescue', href: '#project-3' },
-    { name: 'Aerial Photography', href: '#project-4' },
+    { name: 'Autonomous Fleet', href: '#projects' },
+    { name: 'FPV Racing', href: '#projects' },
+    { name: 'Search & Rescue', href: '#projects' },
+    { name: 'Aerial Photography', href: '#projects' },
   ];
 
   return (
@@ -108,7 +108,7 @@ const Footer: React.FC = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="w-4 h-4 text-nd-gold" />
-                <span className="text-gray-400">Stinson-Remick Hall of Engineering - B19</span>
+                <span className="text-gray-400">Fitzpatrick Hall of Engineering - A54</span>
               </div>
             </div>
           </div>

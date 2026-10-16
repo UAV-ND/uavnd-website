@@ -3,9 +3,10 @@ import { Users, Mail, Linkedin, Award, Calendar } from 'lucide-react';
 import jgImage from '../img/jg.jpeg';
 import winstonImage from '../img/winston.jpeg';
 import minjaeImage from '../img/minjae.png';
-import enochImage from '../img/enoch.jpeg';
-import jessicaImage from '../img/jessica_headshot.jpg';
+import enochImage from '../img/enoch.png';
+import jessicaImage from '../img/jessica_headshot.png';
 import batyrkhanImage from '../img/bat_headshot.png';
+import adamImage from '../img/adam_kessou.png';
 
 const Team: React.FC = () => {
 	const leadership = [
@@ -22,7 +23,7 @@ const Team: React.FC = () => {
 		},
 		{
 			name: "Minjae Kim",
-			role: "Director of Research and Development",
+			role: "Dir. of Research & Development",
 			major: "Electrical Engineering",
 			year: "Senior",
 			location: "Tamuning, GU",
@@ -47,7 +48,7 @@ const Team: React.FC = () => {
 	leadership.push(
 		{
 			name: "Enoch Hyo-Gun Lee",
-			role: "Director of Growth and Expansion",
+			role: "Dir. of Growth & Expansion",
 			major: "Electrical Engineering",
 			year: "Junior",
 			location: "Gyeonggi-do, South Korea",
@@ -77,6 +78,17 @@ const Team: React.FC = () => {
 			bio: "Leading the social media presence of the team and showcasing our projects and team culture through engaging social media content.",
 			linkedin: "https://www.linkedin.com/in/jessica-haro-",
 			email: "jharo@nd.edu"
+		},
+		{
+			name: "Adam Kessou",
+			role: "Safety Officer",
+			major: "Computer Science",
+			year: "Sophomore",
+			location: "Montgomery, AL",
+			image: adamImage,
+			bio: "Ensuring the safety of all UAV operations and club activities while promoting responsible flight practices across the team.",
+			linkedin: "https://www.linkedin.com/in/adam-kessou-30391a3a8/",
+			email: "akessou@nd.edu"
 		}
 	);
 
@@ -86,7 +98,7 @@ const Team: React.FC = () => {
 			description: "Designing and building electronic systems, circuit boards, and hardware components for UAVs"
 		},
 		{
-			name: "Mechanical Systems",
+			name: "Vehicles Systems",
 			description: "Developing airframe design, propulsion systems, and mechanical components"
 		},
 		{
@@ -125,7 +137,14 @@ const Team: React.FC = () => {
                       src={member.image} 
                       alt={member.name}
                       className="w-full h-full object-cover"
-                      style={{ objectPosition: member.name === 'Jake Kalman' ? 'center 40%' : 'center' }}
+                      style={{
+                        objectPosition:
+                          member.name === 'Jake Kalman'
+                            ? 'center 40%'
+                            : member.name === 'Adam Kessou'
+                              ? 'center 20%'
+                              : 'center',
+                      }}
                     />
 									</div>
 									<div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2">
@@ -229,7 +248,7 @@ const Team: React.FC = () => {
 								<Calendar className="w-8 h-8 text-nd-gold" />
 							</div>
 							<h4 className="text-lg font-semibold text-white mb-2">Weekly Meetings</h4>
-							<p className="text-gray-300 text-sm">Mon, Wed, Fri - 6:00-9:00 PM</p>
+							<p className="text-gray-300 text-sm">Mon, Tue, Wed - between the hours of 5:30-9:00 PM</p>
 						</div>
 						<div className="text-center">
 							<div className="w-16 h-16 bg-nd-gold/20 rounded-full flex items-center justify-center mx-auto mb-4">

@@ -36,6 +36,11 @@ const About: React.FC = () => {
       year: "2026",
       title: "Best Mission Completion Time Award at 2026 AIMM ICC Competition",
       description: "Won the fastest mission completion time award at the 2026 AIMM ICC Competition"
+    },
+    {
+      year: "2026",
+      title: "Anduril AI Grand Prix",
+      description: "Competed in the 2026 Anduril AI Grand Prix and advanced to Virtual Qualifier 2"
     }
   ];
 
@@ -138,7 +143,7 @@ const About: React.FC = () => {
                 <MapPin className="w-6 h-6 text-nd-gold mt-1" />
                 <div>
                   <p className="text-white font-semibold">University of Notre Dame</p>
-                  <p className="text-gray-300">Stinson-Remick Hall of Engineering - 216
+                  <p className="text-gray-300">Fitzpatrick Hall of Engineering - A54
                   </p>
                   <p className="text-gray-300">Notre Dame, IN 46556</p>
                 </div>
