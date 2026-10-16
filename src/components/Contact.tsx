@@ -84,7 +84,12 @@ const Contact: React.FC = () => {
     {
       icon: Clock,
       title: "Meeting Times",
-      details: "Mon, Wed, Fri - 6:00-9:00 PM",
+      details:[
+      "Mon: Software Subteam • 5:30-7:30 PM",
+      "Mon: Electrical Subteam • 6:30-8:30 PM",
+      "Tue: Vehicles Subteam • 6:30-8:30 PM",
+      "Wed: General Meeting • 7:00-9:00 PM",
+      ],
       description: "Drop in anytime during these hours"
     },
   ];
@@ -239,11 +244,23 @@ const Contact: React.FC = () => {
                       <div className="w-12 h-12 bg-nd-gold/20 rounded-lg flex items-center justify-center flex-shrink-0">
                         <Icon className="w-6 h-6 text-nd-gold" />
                       </div>
+
                       <div>
                         <h4 className="text-lg font-semibold text-white mb-1">{info.title}</h4>
+
+                        {Array.isArray(info.details) ? (
+                          <div className = "text-nd-gold fond-medium mb-1 space-y-1">
+                            {info.details.map((detail) => (
+                              <div key={detail}>{detail}</div>
+                            ))}
+                          </div>
+                        ) : (
                         <p className="text-nd-gold font-medium mb-1">{info.details}</p>
+                        )}
                         <p className="text-gray-400 text-sm">{info.description}</p>
                       </div>
+
+
                     </div>
                   );
                 })}

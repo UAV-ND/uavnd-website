@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight, Drone, Camera, Wifi, Shield, Zap } from 'lucide-react';
+import { a } from 'framer-motion/dist/types.d-DsEeKk6G';
 
 const Projects: React.FC = () => {
   const projects = [
@@ -9,7 +10,7 @@ const Projects: React.FC = () => {
       description: "Global autonomous drone racing competition founded by Anduril, challenging engineers to develop AI systems that pilot high-speed racing drones through dynamic courses with zero human control. Competing for a $500K prize pool.",
       icon: Zap,
       technologies: ["Autonomous Flight", "AI/ML", "Computer Vision", "Python", "Obstacle Avoidance"],
-      status: "Active",
+      status: "Archived",
       image: "/api/placeholder/400/300",
       link: "https://www.theaigrandprix.com/"
     },
@@ -47,7 +48,7 @@ const Projects: React.FC = () => {
 
       icon: Drone,
       technologies: ["Autonomous Vehicle", "Computer Vision", "AI/ML", "Prediction Algorithms"],
-      status: "Comming Soon",
+      status: "Active",
       image: "/api/placeholder/400/300",
       link: "https://www.youtube.com/watch?v=TaiLjWskhFQ&t=7s"
     },
@@ -57,7 +58,7 @@ const Projects: React.FC = () => {
       description: "Artificial Intelligence Maritime Maneuver Indiana Collegiate Challenge - developing innovative drone solutions for maritime scenarios including drone-vs-drone intercept with prediction algorithms.",
       icon: Drone,
       technologies: ["Python", "Computer Vision", "AI/ML", "Prediction Algorithms"],
-      status: "Comming Soon",
+      status: "Active",
       image: "/api/placeholder/400/300",
       link: "https://www.trine.edu/innovation-one/aimm/index.aspx"
     },
@@ -73,8 +74,11 @@ const Projects: React.FC = () => {
         return 'bg-blue-500/20 text-blue-400 border-blue-500/30';
       case 'Comming Soon':
         return 'bg-gray-500/20 text-gray-400 border-gray-500/30';
+      case 'Archived':
+         return 'bg-gray-500/20 text-gray-400 border-gray-500/30';
       default:
         return 'bg-gray-500/20 text-gray-400 border-gray-500/30';
+      
     }
   };
 
@@ -97,8 +101,14 @@ const Projects: React.FC = () => {
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {projects.map((project, index) => {
-            const Icon = project.icon;
+          {[...projects]
+            .sort((a, b) => {
+              if (a.status === 'Active' && b.status !== 'Active') return -1;
+              if (a.status !== 'Active' && b.status === 'Active') return 1;
+              return 0;
+          })
+            .map((project, index) => {
+              const Icon = project.icon;
             return (
               <div
                 key={project.id}
